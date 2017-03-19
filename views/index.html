@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>yz用户系统</title>
+    <style>
+        .W_uxContent {
+            border: 1px solid #D2DED1;
+        }
+
+        .W_uxContent li {
+            list-style: none;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form id="add-form" method="post">
+        <fieldset>
+            <label>用户名:</label>
+            <input type="text" name="username">
+            <label>密码:</label>
+            <input type="text" name="password">
+            <button id="addBtn" type="submit">提交</button>
+        </fieldset>
+    </form>
+</div>
+
+
+<ul class="W_uxContent">
+    <% if (userList.length>0) { %>
+    <% userList.forEach(function(el){%>
+    <li>
+        <a href="javascript:;" data-uid="<%=el.id%>" class="J_user"><%=el.name%></a>
+    </li>
+    <%})%>
+    <% } %>
+</ul>
+<script src="//libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script>
+<script src="/userManger/js/index.js"> </script>
+</body>
+</html>
